@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ex Raid Map</title>
-  <link rel="stylesheet" href="leaflet.css"/>
-  <script type="text/javascript" src="leaflet.js"></script>
-  <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
-  <script type="text/javascript" src="leaflet-search.js"></script>
+  <title>Ex Raid Map</title>  
   <link rel="stylesheet" href="leaflet-search.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+  <script type="text/javascript" src="leaflet-search.js"></script>
+  <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
   <style>
         body 
         {
@@ -54,6 +58,18 @@
   
   var layerControl = null;
   
+  var empty;  
+  $.getJSON("./empty.geojson", function(data) {
+  empty = L.geoJson(data, {
+	      onEachFeature: function (feature, layer) {
+	        //layer.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude);
+	      }
+	    });
+	    //s2cell_13.addTo(map);
+	    map.addLayer(empty);
+        layerControl.addBaseLayer(empty, "None");
+	  });
+  
   var s2cell_13;  
   $.getJSON("./Brussels_s2_13.geojson", function(data) {
   s2cell_13 = L.geoJson(data, {
@@ -62,10 +78,22 @@
 	      }
 	    });
 	    //s2cell_13.addTo(map);
-	    map.addLayer(s2cell_13);
+	    //map.addLayer(s2cell_13);
         layerControl.addBaseLayer(s2cell_13, "L13 s2 cells");
 	  });
-	
+  
+  var s2cell_14;  
+  $.getJSON("./Brussels_s2_14.geojson", function(data) {
+  s2cell_14 = L.geoJson(data, {
+	      onEachFeature: function (feature, layer) {
+	        //layer.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude);
+	      }
+	    });
+	    //s2cell_13.addTo(map);
+	    //map.addLayer(s2cell_13);
+        layerControl.addBaseLayer(s2cell_14, "L14 s2 cells");
+	  });
+  
   var gyms;  
   $.getJSON("./Brussels.geojson", function(data) {
   gyms = L.geoJson(data, {
