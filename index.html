@@ -59,7 +59,7 @@
   var layerControl = null;
   
   var empty;  
-  $.getJSON("./empty.geojson", function(data) {
+  $.getJSON("./Empty.geojson", function(data) {
   empty = L.geoJson(data, {
 	      onEachFeature: function (feature, layer) {
 	        //layer.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude);

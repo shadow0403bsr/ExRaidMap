@@ -1995,6 +1995,426 @@
                50.903736
             ]
          }
-      }
-   ]
+      },
+	  {
+   "type":"Feature",
+   "properties":{
+      "name":"Multipurpose Jhoola",
+      "latitude":"30.694362",
+      "longitude":"76.767024"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.767024,
+         30.694362
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Scarry Dianasour Slider",
+      "latitude":"30.693592",
+      "longitude":"76.765812"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.765812,
+         30.693592
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Dinosaur Slider in the Park",
+      "latitude":"30.689963",
+      "longitude":"76.759521"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.759521,
+         30.689963
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Jhoola In Park",
+      "latitude":"30.692146",
+      "longitude":"76.759165"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.759165,
+         30.692146
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Big Jhoola In Park",
+      "latitude":"30.688607",
+      "longitude":"76.756876"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.756876,
+         30.688607
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Resting Place On Middle of Park",
+      "latitude":"30.687087",
+      "longitude":"76.754594"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.754594,
+         30.687087
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Colored Brick Cube",
+      "latitude":"30.712221",
+      "longitude":"76.752694"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.752694,
+         30.712221
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Tetrahedron In Children's Park",
+      "latitude":"30.728085",
+      "longitude":"76.763605"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.763605,
+         30.728085
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Jhoolas in Park",
+      "latitude":"30.72182",
+      "longitude":"76.75349"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.75349,
+         30.72182
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"The Memorial Insignia",
+      "latitude":"30.727397",
+      "longitude":"76.734928"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.734928,
+         30.727397
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Kid Swing in Dream Park",
+      "latitude":"30.739734",
+      "longitude":"76.759604"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.759604,
+         30.739734
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Sitting Shed No.2",
+      "latitude":"30.74386",
+      "longitude":"76.731617"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.731617,
+         30.74386
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Fountain of Elderly",
+      "latitude":"30.712208",
+      "longitude":"76.720581"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.720581,
+         30.712208
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Fountain At Silvi Park",
+      "latitude":"30.686862",
+      "longitude":"76.740301"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.740301,
+         30.686862
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Swings In Neighbourhood Park",
+      "latitude":"30.681905",
+      "longitude":"76.744891"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.744891,
+         30.681905
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Fountain 1 In City Park",
+      "latitude":"30.687588",
+      "longitude":"76.730748"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.730748,
+         30.687588
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Rock Garden Memory Stone",
+      "latitude":"30.753294",
+      "longitude":"76.80405"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.80405,
+         30.753294
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Art by Rocks",
+      "latitude":"30.752697",
+      "longitude":"76.804357"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.804357,
+         30.752697
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Effiel Tower Clone",
+      "latitude":"30.748841",
+      "longitude":"76.78543"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.78543,
+         30.748841
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"The Wind Chime Tree",
+      "latitude":"30.747685",
+      "longitude":"76.782428"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.782428,
+         30.747685
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Fountains in Park Sector 20 A",
+      "latitude":"30.722318",
+      "longitude":"76.783"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.783,
+         30.722318
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Cactus Garden Asia's Largest",
+      "latitude":"30.697315",
+      "longitude":"76.851012"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.851012,
+         30.697315
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Panchkula's 25th Anniversary Memorial",
+      "latitude":"30.695914",
+      "longitude":"76.854729"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.854729,
+         30.695914
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Long Water Tank",
+      "latitude":"30.703461",
+      "longitude":"76.854438"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.854438,
+         30.703461
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Traffic Park",
+      "latitude":"30.678148",
+      "longitude":"76.854431"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.854431,
+         30.678148
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Valley Of Animals Park",
+      "latitude":"30.692306",
+      "longitude":"76.750189"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.750189,
+         30.692306
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Centre of Valley of Animals",
+      "latitude":"30.692935",
+      "longitude":"76.751284"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.751284,
+         30.692935
+      ]
+   }
+},
+{
+   "type":"Feature",
+   "properties":{
+      "name":"Buddha Statue At Garden of Silence",
+      "latitude":"30.738471",
+      "longitude":"76.830138"
+   },
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         76.830138,
+         30.738471
+      ]
+   }
+}
+]
 }
