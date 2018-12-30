@@ -11,17 +11,21 @@
   crossorigin=""></script>
   <script type="text/javascript" src="leaflet-search.js"></script>
   <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+  <link rel="shortcut icon" href="./favicon.ico">
   <style>
         body 
         {
             padding: 0;
             margin: 0;
         }
-        html, body, #map 
+        #map 
         {
-            height: 100%;
-            width: 100%;
-        }
+    		bottom: 0;
+    		position: absolute;
+    		top: 0;
+    		width: 100%;
+    		z-index: 0
+		}
         .search-input 
         {
 			font-family:Courier
@@ -30,15 +34,80 @@
 		{
 			max-width:400px;
 		}
+		.city-filter
+		{
+    		width: 100vw;
+    		overflow: auto
+		}
+		@media screen and (min-width: 600px) 
+		{
+    		.city-filter 
+    		{
+        		width:calc(100% - 0px)
+    		}
+		}
+		.btn-group 
+		{
+    		z-index: 1;
+    		position: relative;
+    		display: -ms-inline-flexbox;
+    		display: inline-flex;
+    		vertical-align: top
+		}
+		.btn 
+		{
+    		display: inline-block;
+    		font-weight: 400;
+    		text-align: center;
+    		white-space: nowrap;
+    		vertical-align: middle;
+    		-webkit-user-select: none;
+    		-moz-user-select: none;
+    		-ms-user-select: none;
+    		user-select: none;
+    		border: 1px solid transparent;
+    		padding: .5rem .75rem;
+    		font-size: 1rem;
+    		line-height: 1;
+    		border-radius: .25rem;
+    		-webkit-transition: all .15s ease-in-out;
+    		-o-transition: all .15s ease-in-out;
+   			transition: all .15s ease-in-out;
+    		color: #fff;
+    		background-color: #868e96;
+    		border-color: #868e96;
+    		cursor: pointer
+		}
+		.btn-group>.btn 
+		{
+    		border-radius: 0	
+		}
+		.btn.active,.btn:hover 
+		{
+    		background-color: #727b84;
+    		background-image: none;
+    		border-color: #6c757d
+		}
+		.leaflet-top 
+		{ 
+			padding-top: 50px; 
+		}
     </style>
 </head>
 <body>
+
+  <div class="city-filter btn-group">
+  	<div class="active btn" id="Brussels">Brussels</div>
+  	<div class="btn" id="Chandigarh">Chandigarh</div>
+  	<div class="btn" id="New York">New York</div>
+  	<div class="btn" id="Virginia Beach">Virginia Beach</div>
+  </div>
 
   <div id="map"></div>
 
   <script type="text/javascript"> 
   // initialize the map
-  var map = L.map('map').setView([50.85, 4.34], 14);
+  var map = L.map('map').setView([50.8503, 4.3517], 14);
 
   // load a tile layer
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -119,6 +188,41 @@
 		autoType: false,
 		minLength: 2
 	}) );
-  </script>
+
+    (function() {
+        document.getElementById("Chandigarh").onclick = function() 
+        { 
+        	var element = document.getElementById("Chandigarh");
+        	var activeElement = document.getElementsByClassName("active btn")[0];
+        	element.classList.toggle("active");
+        	activeElement.classList.toggle("active");     
+        	map.setView([30.7333, 76.7794], 14);
+        };
+        document.getElementById("Brussels").onclick = function() 
+        { 
+        	var element = document.getElementById("Brussels");
+        	var activeElement = document.getElementsByClassName("active btn")[0];
+        	element.classList.toggle("active");
+        	activeElement.classList.toggle("active");  
+        	map.setView([50.8503, 4.3517], 14);
+        };
+        document.getElementById("New York").onclick = function() 
+        { 
+        	var element = document.getElementById("New York");
+        	var activeElement = document.getElementsByClassName("active btn")[0];
+        	element.classList.toggle("active");
+        	activeElement.classList.toggle("active");  
+        	map.setView([40.7128, -74.0060], 14);
+        };
+        document.getElementById("Virginia Beach").onclick = function() 
+        { 
+        	var element = document.getElementById("Virginia Beach");
+        	var activeElement = document.getElementsByClassName("active btn")[0];
+        	element.classList.toggle("active");
+        	activeElement.classList.toggle("active");  
+        	map.setView([36.8529, -75.9780], 14);
+        };
+    })();
+</script>
 </body>
 </html>
