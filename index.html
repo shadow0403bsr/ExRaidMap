@@ -113,8 +113,8 @@
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href = "https://www.google.co.in">Missing raid location?</a>',
-      maxZoom: 19,
-      minZoom: 2
+      maxZoom: 16,
+      minZoom: 12
     }).addTo(map); 
   
   var exraidIcon = L.icon({
@@ -127,55 +127,85 @@
   
   var layerControl = null;
   
-  var empty;  
-  $.getJSON("./Empty.geojson", function(data) {
-  empty = L.geoJson(data, {
-	      onEachFeature: function (feature, layer) {
-	        //layer.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude);
-	      }
-	    });
-	    //s2cell_13.addTo(map);
-	    map.addLayer(empty);
-        layerControl.addBaseLayer(empty, "None");
-	  });
+  var empty;
+  empty = $.ajax({
+      url: "https://gist.githubusercontent.com/shadow0403bsr/56135aa4332611363043e185b93de173/raw/902e432dca3fe65ceda22883d18beff9d04bb507/Empty.geojson",
+      dataType: "json",
+      success: console.log("Data successfully loaded."),
+      error: function(xhr) {
+          alert(xhr.statusText)
+      }
+  })
+  $.when(empty).done(function() {
+  var nocells;
+  nocells = L.geoJson(empty.responseJSON, {
+      onEachFeature: function (feature, layer) {
+      	}
+  });
+  map.addLayer(nocells);
+  layerControl.addBaseLayer(nocells, "None");
+  });
   
-  var s2cell_13;  
-  $.getJSON("./Brussels_s2_13.geojson", function(data) {
-  s2cell_13 = L.geoJson(data, {
-	      onEachFeature: function (feature, layer) {
-	        //layer.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude);
-	      }
-	    });
-	    //s2cell_13.addTo(map);
-	    //map.addLayer(s2cell_13);
-        layerControl.addBaseLayer(s2cell_13, "L13 s2 cells");
-	  });
+  var s2L13;
+  s2L13 = $.ajax({
+      url: "https://gist.githubusercontent.com/shadow0403bsr/e05de21ac793740651a116c2d552f8b2/raw/46a6c956ef15e89ecd4395523abd35f9856fa31a/Brussels_s2_13.geojson",
+      dataType: "json",
+      success: console.log("Data successfully loaded."),
+      error: function(xhr) {
+          alert(xhr.statusText)
+      }
+  })
+  $.when(s2L13).done(function() {
+  var s2l13;
+  s2l13 = L.geoJson(s2L13.responseJSON, {
+      onEachFeature: function (feature, layer) {
+      	}
+  });
+  //map.addLayer(s2l13);
+  layerControl.addBaseLayer(s2l13, "L13 s2 cells");
+  });
   
-  var s2cell_14;  
-  $.getJSON("./Brussels_s2_14.geojson", function(data) {
-  s2cell_14 = L.geoJson(data, {
-	      onEachFeature: function (feature, layer) {
-	        //layer.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude);
-	      }
-	    });
-	    //s2cell_13.addTo(map);
-	    //map.addLayer(s2cell_13);
-        layerControl.addBaseLayer(s2cell_14, "L14 s2 cells");
-	  });
+  var s2L14; 
+  s2L14 = $.ajax({
+      url: "https://gist.githubusercontent.com/shadow0403bsr/4e591848ff74a77dfdda9ab05ba9361a/raw/f0414eb454088e201e53e97313805ed00bb8b653/Brussels_s2_14.geojson",
+      dataType: "json",
+      success: console.log("Data successfully loaded."),
+      error: function(xhr) {
+          alert(xhr.statusText)
+      }
+  })
+  $.when(s2L14).done(function() {
+  var s2l14;
+  s2l14 = L.geoJson(s2L14.responseJSON, {
+      onEachFeature: function (feature, layer) {
+      	}
+  	});
+  //map.addLayer(s2l14);
+  layerControl.addBaseLayer(s2l14, "L14 s2 cells");
+  });
   
-  var gyms;  
-  $.getJSON("./Brussels.geojson", function(data) {
-  gyms = L.geoJson(data, {
+  var gyms; 
+  gyms = $.ajax({
+      url: "https://gist.githubusercontent.com/shadow0403bsr/636ca52db116ead6fb7d0807af529009/raw/bdac8180ca65c47112112c33a23e237612023f55/Brussels.geojson",
+      dataType: "json",
+      success: console.log("Data successfully loaded."),
+      error: function(xhr) {
+          alert(xhr.statusText)
+      }
+  })
+  $.when(gyms).done(function() {
+  var exgyms;
+  exgyms = L.geoJson(gyms.responseJSON, {
 	    pointToLayer: function(feature, latlng) {
 	        return L.marker(latlng, {icon: exraidIcon}).on('mouseover', function(){
 	            this.bindPopup("<strong>Name: </strong>" + feature.properties.name + "<br><strong>Latitude: </strong>" + feature.properties.latitude + "<br><strong>Longitude: </strong>" + feature.properties.longitude).openPopup();
 	        });
 	    }
 	});
-    //gyms.addTo(map);
-  		map.addLayer(gyms);
-  		layerControl.addOverlay(gyms, "Ex Raid Gyms");
+  map.addLayer(exgyms);
+  layerControl.addOverlay(exgyms, "Ex Raid Gyms");
   });
+  
   var layerControl = L.control.layers([], []).addTo(map);
   
   map.addControl( new L.Control.Search({
@@ -206,14 +236,6 @@
         	activeElement.classList.toggle("active");  
         	map.setView([50.8503, 4.3517], 14);
         };
-        document.getElementById("New York").onclick = function() 
-        { 
-        	var element = document.getElementById("New York");
-        	var activeElement = document.getElementsByClassName("active btn")[0];
-        	element.classList.toggle("active");
-        	activeElement.classList.toggle("active");  
-        	map.setView([40.7128, -74.0060], 14);
-        };
         document.getElementById("Virginia Beach").onclick = function() 
         { 
         	var element = document.getElementById("Virginia Beach");
@@ -221,6 +243,14 @@
         	element.classList.toggle("active");
         	activeElement.classList.toggle("active");  
         	map.setView([36.8529, -75.9780], 14);
+        };
+        document.getElementById("New York").onclick = function() 
+        { 
+        	var element = document.getElementById("New York");
+        	var activeElement = document.getElementsByClassName("active btn")[0];
+        	element.classList.toggle("active");
+        	activeElement.classList.toggle("active");  
+        	map.setView([40.7128, -74.0060], 14);
         };
     })();
 </script>
